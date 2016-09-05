@@ -1,0 +1,45 @@
+<table
+    data-ng-show="articles.length >0"
+
+    class='table table-striped table-hover'>
+
+        <tr class="success">
+            <td>Article Name</td>
+            <td>Details</td>
+            <td>IsActive Category</td>
+            <td>Create Date</td>
+            <td>Actions</td>
+        </tr>
+
+        <tr data-ng-repeat="article in articles">
+            <td>{{article.CategoryName}}</td>
+            <td>{{article.Details}}</td>
+            <td>{{article.IsValid == "1" ? "Valid" : "Invalid"}}</td>
+            <td>{{article.CreatedDate}}</td>
+            <td class="info">
+
+
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        View/Edit/Delete Article <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                        <li><a href="/editArticles/{{article.Id}}">Edit Article</a></li>
+                        <li><a href="#">View Details</a></li>
+                        <li class="divider"></li>
+                        <li>
+                                <button
+                                    type="button"
+                                    class="btn btn-danger"
+                                    data-toggle="modal"
+                                    data-target="#exampleModal"
+                                    data-categoryId="{{article.Id}}"
+                                    data-ng-click="setCurrentArticleId(article.Id)">
+                                    
+                                    Delete Article</button></li>
+                    </ul>
+                </div>
+            </td>
+
+        </tr>
+        </table>

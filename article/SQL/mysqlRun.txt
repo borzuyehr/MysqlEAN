@@ -1,0 +1,34 @@
+/* MYSQL guide */
+
+//Download server @
+http://dev.mysql.com/downloads/mysql/
+
+//Start server
+In system preference click on MYSQL icon
+
+/*** MAKE SURE TO RECORD TEMPRORARY PASSWORD ***/
+
+click on start MYSQL
+
+//navigate to directory:
+cd /usr/local/mysql/bin
+
+//login with temporary password in terminal:
+./mysql -u root -p
+
+//type in temporary password
+....
+
+//change the password to your own password
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('new-password-here');
+
+//end expiration of the user password !!!!DO NOT USE ON A REAL SERVER!!!!
+ALTER USER 'root'@'localhost' PASSWORD EXPIRE NEVER;
+
+//after login to server type following command to access database
+use mysql
+
+//username:
+root@localhost
+
+
