@@ -6,7 +6,7 @@ var mysqlConnectionString = {
             port: '3306',
             host: 'localhost',
             user: 'root',
-            password : 'Shirinminoo20',
+            password : 'FunMysqlProject',
             database : 'articlemanagement'
         },
 
